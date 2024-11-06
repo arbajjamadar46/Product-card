@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>card-product</title>
+</head>
+<body>
+    <h1 class="head"> 🍰 Bakers Corner 🍫</h1>
+    <div class="card" id="card">
+        <img src="product.jpg" alt="product" class="product"/>
+        <h2 class="title">Dark Truffle Cup Cake</h2>
+        <p class="product-price">Price : ₹50/-</p>
+        <div class="container-quality">
+            
+            <img src="minus.png" alt=""class="shape" onclick="dec()">
+            <span id="quantity">1</span>
+            <img src="plus.png" alt="" class="shape" onclick="inc()"/>
+            
+        </div>
+        <button onclick="changeColor()" class="buy-now">Buy Now</button>
+    </div>
+    <script>
+        const quantityelement = document.getElementById('quantity'); 
+        function inc(){
+          let quantity = parseInt(quantityelement.innerText);
+          quantityelement.innerText = ++quantity;
+        }
+        function dec(){
+            let quantity = parseInt(quantityelement.innerText);
+            if(quantity>1){
+                quantityelement.innerText = --quantity;
+            }
+        }
+    </script>
+</body>
+</html>
